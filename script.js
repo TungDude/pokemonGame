@@ -1,31 +1,48 @@
-const interval = setInterval(pokemonGenerator(), 1000);
+const interval = setInterval(pokemonGenerator, 10000);
+var pokemonName;
+var answered;
 
 async function pokemonGenerator() {
+    answered = false;
     let id = Math.floor(Math.random() * 1017) + 1;
     let url = "https://pokeapi.co/api/v2/pokemon/" + id + "/";
     const response = await fetch(url);
     const pokemon = await response.json();
-    console.log(pokemon);
 
     const pokemonContainer = document.getElementById("pokemonContainer");
     let divInner = document.createElement('div');
     let divImg = document.createElement('div');
     let divName = document.createElement('div');
-    let small = document.createElement('small');
+    // let small = document.createElement('small');
 
     divInner.className = "cards-inner"
+    pokemonContainer.innerHTML = "";
 
     let pokedexNumber = url.slice(34).replace('/', '');
 
-    const word = pokemon['name'];
-    const capitalizedName = word.charAt(0).toUpperCase() + word.slice(1);
+    pokemonName = pokemon['name'].toLowerCase();
+    console.log(pokemonName);
+    // const capitalizedName = word.charAt(0).toUpperCase() + word.slice(1);
 
-    divImg.innerHTML = "<img src='" + pokemon['sprites']['front_default'] + "'/>";
-    divName.innerHTML = "<h4>" + capitalizedName + "</h4>";
-    small.innerHTML = "National Id: " + pokedexNumber;
+    divImg.innerHTML = "<img class='pokemon-img' src='" + pokemon['sprites']['front_default'] + "'/>";
+    divName.innerHTML = "<h4>" + "National Id: " + pokedexNumber + "</h4>";
+    // small.innerHTML = "National Id: " + pokedexNumber;
     divInner.appendChild(divImg);
     divInner.appendChild(divName);
-    divInner.appendChild(small);
+    // divInner.appendChild(small);
 
     pokemonContainer.appendChild(divInner);
+}
+
+async function checkAnswer() {
+    event.preventDefault();
+    var answer = document.getElementById("userAnswer");
+
+    if (answer.value.toLowerCase() == pokemonName && answered == false) {
+        answered = true;
+        let pointsTag = document.getElementById("points");
+        let points = parseInt(pointsTag.innerHTML[pointsTag.innerHTML.length - 1]);
+        pointsTag.innerHTML = "Points: " + (points + 1);
+    }
+    answer.value = "";
 }

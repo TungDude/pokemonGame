@@ -8,16 +8,22 @@
     <title>Pokemon Catcher</title>
     <script src="script.js"></script>
 </head>
-<body>
+<body onload="pokemonGenerator()">
     <div class="center">
         <br>
-        <img src="cartoon-pokeball-sticker.png" width = 50px></img>
+        <img class="logo-img" src="cartoon-pokeball-sticker.png" width = 50px></img>
         <h1>Pokemon Catcher</h1>
-        <div class="container">
-            <div class="cards" id="pokemonContainer">
+        <h4 id="points">Points: 0</h4>
+        <div class="container" id ="pokemonContainer">
+            <!-- <div class="cards" id="pokemonContainer">
 
-            </div>
+            </div> -->
         </div>
+        <h2>Who's that Pokemon !?</h2>
+        <form>
+            <input id="userAnswer" type="text" name="answer" placeholder="Insert Pokemon Name">
+            <input type="submit" onclick="checkAnswer()" hidden>
+        </form>
     </div>
 </body>
 </html>
