@@ -40,9 +40,16 @@ async function checkAnswer() {
 
     if (answer.value.toLowerCase() == pokemonName && answered == false) {
         answered = true;
+        let pointsContainer = document.getElementById("pointsContainer");
+        let point_h4 = document.createElement("h3");
         let pointsTag = document.getElementById("points");
         let points = parseInt(pointsTag.innerHTML[pointsTag.innerHTML.length - 1]);
-        pointsTag.innerHTML = "Points: " + (points + 1);
+
+        pointsContainer.innerHTML = "";
+        point_h4.innerHTML = "Points: " + (points + 1);
+        point_h4.className = "point";
+        point_h4.id = "points"
+        pointsContainer.appendChild(point_h4);
     }
     answer.value = "";
 }
