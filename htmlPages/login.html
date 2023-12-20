@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/loginStyles.css" />
+    <script src="../script/loginScript.js"></script>
+    <title>Login Page</title>
+</head>
+<body>
+    <div class="center">
+        <br>
+        <img class="logo-img" src="../img/cartoon-pokeball-sticker.png" width = 50px></img>
+        <h1>Welcome to PokeWorld</h1>
+        <small>Please enter your login information below</small>
+        <form>
+            <input type="text" id="username" name="username" autocomplete="off" placeholder="Enter Username">
+            <input type="password" id="password" name="password" autocomplete="off" placeholder="Enter Password">
+            <br>
+            <button class="loginButton" id="login" onclick="verifyUser()">Login</button>
+        </form>
+    </div>  
+</body>
+</html>

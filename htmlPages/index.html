@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/indexStyles.css" />
+    <title>Pokemon Catcher</title>
+    <script src="../script/indexScript.js"></script>
+</head>
+<body onload="pokemonGenerator()">
+    <button class="logoutButton" onclick="Logout()">Logout</button>
+    <div class="center">
+        <br>
+        <img class="logo-img" src="../img/cartoon-pokeball-sticker.png" width = 50px></img>
+        <h1>Pokemon Catcher</h1>
+        <div id="pointsContainer">
+            <h3 id="points">Points: 0</h3>
+        </div>
+        <div class="container" id ="pokemonContainer">
+            <!-- <div class="cards" id="pokemonContainer">
+
+            </div> -->
+        </div>
+        <h2>Who's that Pokemon !?</h2>
+        <form>
+            <input id="userAnswer" type="text" name="answer" placeholder="Insert Pokemon Name">
+            <input type="submit" onclick="checkAnswer()" hidden>
+        </form>
+    </div>
+</body>
+</html>
