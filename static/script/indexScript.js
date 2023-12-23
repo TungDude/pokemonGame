@@ -43,7 +43,7 @@ async function checkAnswer() {
         let pointsContainer = document.getElementById("pointsContainer");
         let point_h4 = document.createElement("h3");
         let pointsTag = document.getElementById("points");
-        let points = parseInt(pointsTag.innerHTML[pointsTag.innerHTML.length - 1]);
+        let points = parseInt(pointsTag.innerHTML.slice(8));
 
         pointsContainer.innerHTML = "";
         point_h4.innerHTML = "Points: " + (points + 1);
