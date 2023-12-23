@@ -7,10 +7,17 @@
     <link rel="stylesheet" href="../css/indexStyles.css" />
     <title>Pokemon Catcher</title>
     <script src="../script/indexScript.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="../script/audioPlayer.js"></script>
 </head>
 <body onload="pokemonGenerator()">
-    <button class="logoutButton" onclick="Logout()">Logout</button>
-    <div class="center">
+    <div id="player"></div>
+    <div id="Utilities" class="upperright">
+        <button class="inner-upperright" id="logOutButton" onclick="Logout()">Logout</button>
+        <button class="inner-upperright" id="playButton">Play/ Mute Music</button>
+    </div>
+    
+    <div id="mainGame" class="center">
         <br>
         <img class="logo-img" src="../img/cartoon-pokeball-sticker.png" width = 50px></img>
         <h1>Pokemon Catcher</h1>
