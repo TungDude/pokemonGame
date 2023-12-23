@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/indexStyles.css" />
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/indexStyles.css')}}" />
     <title>Pokemon Catcher</title>
-    <script src="../script/indexScript.js"></script>
+    <script src="{{ url_for('static', filename='script/indexScript.js')}}"></script>
     <script src="https://www.youtube.com/iframe_api"></script>
-    <script src="../script/audioPlayer.js"></script>
+    <script src="{{ url_for('static', filename='script/audioPlayer.js')}}"></script>
 </head>
 <body onload="pokemonGenerator()">
     <div id="player"></div>
@@ -19,7 +20,7 @@
     
     <div id="mainGame" class="center">
         <br>
-        <img class="logo-img" src="../img/cartoon-pokeball-sticker.png" width = 50px></img>
+        <img class="logo-img" src="{{ url_for('static', filename='img/cartoon-pokeball-sticker.png') }}" width = 50px></img>
         <h1>Pokemon Catcher</h1>
         <small>Gotta catch'em all !!</small>
         <div id="pointsContainer">
